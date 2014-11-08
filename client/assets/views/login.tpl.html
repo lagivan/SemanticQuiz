@@ -1,72 +1,64 @@
 <div class="login-section">
 
-    <header>
-        <div class="section-title">
-            <h1 class="text-center">Semantic Quiz</h1>
+  <header>
+    <div class="section-title">
+      <h1 class="text-center">Semantic Quiz</h1>
+    </div>
+  </header>
+
+  <div class="login-content">
+    <div class="section-title">
+      <h3>Login to your Account</h3>
+
+      <div class="login_messsage" ng-show="hasError">
+        The username or password you entered was incorrect.
+      </div>
+    </div>
+
+    <form ng-submit="submit();" name="login">
+      <div class="textbox-wrap">
+        <div class="input-group">
+          <span class="input-group-addon "><i class="icon-user icon-color"></i></span>
+          <input type="email" ng-model="email" ng-focus placeholder="eMail" required="true" class="form-control">
+          <span class="field_msg"></span>
         </div>
-    </header>
+      </div>
 
-    <div class="login-content" >
 
-        <div class="section-title">
-            <h3>LogIn to your Account</h3>
-            <p ng-hide="hasError">
-                Hello. Great to see you again!
-            </p>
-            <div class="login_messsage" ng-show="hasError">
-                The username or password you entered was incorrect.
-            </div>
+      <div class="textbox-wrap">
+        <div class="input-group">
+          <span class="input-group-addon "><i class="icon-key icon-color"></i></span>
+          <input type="password" ng-model="password" ng-focus class="form-control" required="true"
+                 placeholder="Password">
+          <span class="field_msg"></span>
         </div>
+      </div>
 
-            <form ng-submit="submit();" name="login">
-                <div class="textbox-wrap">
-                    <div class="input-group">
-                        <span class="input-group-addon "><i class="icon-user icon-color"></i></span>
-                        <input type="email" ng-model="email" ng-focus placeholder="eMail" required="true" class="form-control" >
-                        <span class="field_msg"></span>
-                    </div>
-                </div>
+      <div class="login-form-action clearfix">
+        <button type="submit" class="btn btn-success pull-right green-btn">Login &nbsp; <i
+            class="icon-chevron-right"></i></button>
+      </div>
+    </form>
+  </div>
 
+  <div class="login-form-links link1">
+    <h4 class="blue">Don't have an Account?</h4>
+    <span>No worry</span>
+    <a href="#" class="blue">Click Here</a>
+    <span>to Register</span>
+  </div>
 
-                <div class="textbox-wrap">
-                    <div class="input-group">
-                        <span class="input-group-addon "><i class="icon-key icon-color"></i></span>
-                        <input type="password" ng-model="password" ng-focus  class="form-control" required="true" placeholder="Password" >
-                        <span class="field_msg"></span>
-                    </div>
-                </div>
+  <div class="login-form-links link2">
+    <h4 class="blue">Forgot your Password?</h4>
+    <span>Don't worry</span>
+    <a href="#" class="blue">Click Here</a>
+    <span>to get a new one</span>
+  </div>
 
-
-                <div class="login-form-action clearfix">
-                    <button type="submit" class="btn btn-success pull-right green-btn">LogIn &nbsp; <i class="icon-chevron-right"></i></button>
-                </div>
-            </form>
-
-    </div>
-
-    <div class="login-form-links link1" >
-        <h4 class="blue">Don't have an Account?</h4>
-        <span>No worry</span>
-        <a href="#" class="blue">Click Here</a>
-        <span>to Register</span>
-    </div>
-
-    <div class="login-form-links link2">
-        <h4 class="blue">Forget your Password?</h4>
-        <span>Dont worry</span>
-        <a href="#" class="blue">Click Here</a>
-        <span>to Get New One</span>
-    </div>
-
-    <footer style="font-size:10px; margin-top:25px; text-align: center;">
-
-        <!--<Copyright> Copyright 2013, Mindspace LLC - All Rights Reserved </Copyright> <br/>-->
-        <!--<a href="https://github.com/ThomasBurleson/angularjs-Quizzler" class="source">GitHub Source</a>-->
-
-    </footer>
-
-
-
+  <footer style="font-size:10px; margin-top:25px; text-align: center;">
+    <!--<Copyright> Copyright 2013, Mindspace LLC - All Rights Reserved </Copyright> <br/>-->
+    <!--<a href="https://github.com/ThomasBurleson/angularjs-Quizzler" class="source">GitHub Source</a>-->
+  </footer>
 </div>
 
 
