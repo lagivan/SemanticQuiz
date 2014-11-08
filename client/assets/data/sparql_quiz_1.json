@@ -1,0 +1,31 @@
+{
+    "uid" : 1,
+    "name": "Wanna learn something about beer?",
+
+    "questions" : [
+        {
+            "question" : "Which beer is from {param1}?",
+            "choices"  : [
+                "PREFIX%20dbo%3A%20%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A%0ASELECT%20distinct%20(%3Fbeer%20as%20%3Fanswer_uri)%20(%3FbeerName%20as%20%3Fanswer)%20(%3Flijst%20as%20%3Fparam1)%0AWHERE%20%7B%0A%20%20graph%20%3Fgraph%20%7B%0A%20%20%20%20%3Fbeer%20a%20dbo%3ABeer%20%3B%0A%20%20%20%20%20%20rdfs%3Alabel%20%3FbeerName%20%3B%0A%20%20%20%20%20%20%3Chttp%3A%2F%2Fnl.dbpedia.org%2Fproperty%2Flijst%3E%20%3Flijst%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20dbo%3Aorigin%20%3Forigin%20.%0A%20%20%20%20%3Forigin%20%3Fprop%20%3FpropValue%20.%0A%20%20%20%20filter%20(regex(%3FpropValue%2C%20%22Brabant%22%2C%20%22i%22)%20)%0A%20%20%7D%0A%7D%0Aorder%20by%20rand()%0Alimit%201",
+                "PREFIX%20dbo%3A%20%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A%0ASELECT%20distinct%20(%3FbeerName%20as%20%3Fanswer)%0AWHERE%20%7B%0A%20%20graph%20%3Fgraph%20%7B%0A%20%20%20%20%3Fbeer%20a%20dbo%3ABeer%20%3B%0A%20%20%20%20%20%20rdfs%3Alabel%20%3FbeerName%20%3B%0A%20%20%20%20%20%20%3Chttp%3A%2F%2Fnl.dbpedia.org%2Fproperty%2Flijst%3E%20%3Flijst%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20dbo%3Aorigin%20%3Forigin%20.%0A%20%20%20%20%3Forigin%20%3Fprop%20%3FpropValue%20.%0A%20%20%20%20filter%20(regex(%3FpropValue%2C%20%22Brabant%22%2C%20%22i%22)%20)%0A%20%20%20%20FILTER%20(%3Fbeer%20!%3D%20<answer_uri>)%0A%20%20%7D%0A%7D%20order%20by%20rand()%20limit%203"
+            ],
+            "answer"   : "1"
+        },
+        {
+            "question" : "Which beer is {param1}?",
+            "choices"  : [
+                "PREFIX%20dbo%3A%20%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A%0ASELECT%20distinct%20(%3Fbeer%20as%20%3Fanswer_uri)%20(%3FbeerName%20as%20%3Fanswer)%20(%3Fcolor%20as%20%3Fparam1)%0AWHERE%20%7B%0A%20%20graph%20%3Fgraph%20%7B%0A%20%20%3Fbeer%20a%20dbo%3ABeer%20%3B%0A%20%20%20%20%20%20rdfs%3Alabel%20%3FbeerName%20%3B%0A%20%20%20%20%20%20%3Chttp%3A%2F%2Fnl.dbpedia.org%2Fproperty%2Fkleur%3E%20%3Fcolor%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20dbo%3Aorigin%20%3Forigin%20.%0A%20%20%20%20%3Forigin%20%3Fprop%20%3FpropValue%20.%0A%20%20%20%20filter%20(regex(%3FpropValue%2C%20%22Brabant%22%2C%20%22i%22)%20)%0A%20%20%20%20FILTER%20(!isIRI(%3Fcolor))%0A%20%20%7D%0A%7D%20order%20by%20rand()%20LIMIT%201",
+                "PREFIX%20dbo%3A%20%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A%0ASELECT%20distinct%20(%3FbeerName%20as%20%3Fanswer)%0AWHERE%20%7B%0A%20%20graph%20%3Fgraph%20%7B%0A%20%20%3Fbeer%20a%20dbo%3ABeer%20%3B%0A%20%20%20%20%20%20rdfs%3Alabel%20%3FbeerName%20%3B%0A%20%20%20%20%20%20%3Chttp%3A%2F%2Fnl.dbpedia.org%2Fproperty%2Fkleur%3E%20%3Fcolor%20%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20dbo%3Aorigin%20%3Forigin%20.%0A%20%20%20%20%3Forigin%20%3Fprop%20%3FpropValue%20.%0A%20%20%20%20filter%20(regex(%3FpropValue%2C%20%22Brabant%22%2C%20%22i%22)%20)%0A%20%20%20%20FILTER%20(!isIRI(%3Fcolor))%0A%20%20%20%20FILTER%20(%3Fbeer%20!%3D%20<answer_uri>)%0A%20%20%7D%0A%7D%20order%20by%20rand()%20LIMIT%203"
+            ],
+            "answer"   : "1"
+        },
+        {
+            "question" : "Which beer does {param1} make? Hint: it's in {param2}",
+            "choices"  : [
+                "PREFIX%20dbo%3A%20%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A%0ASELECT%20distinct%20(%3Fbeer%20as%20%3Fanswer_uri)%20(%3FbeerName%20as%20%3Fanswer)%20(%3FbreweryName%20as%20%3Fparam1)%20(%3FcityName%20as%20%3Fparam2)%0AWHERE%20%7B%0A%20%20graph%20%3Chttp%3A%2F%2Flive.nl.dbpedia.org%3E%20%7B%0A%20%20%20%20%3Fbeer%20a%20dbo%3ABeer%20%3B%0A%20%20%20%20%20%20rdfs%3Alabel%20%3FbeerName%20%3B%20%20%20%20%20%0A%20%20%20%20%20%20dbo%3Aorigin%20%3Forigin%20.%0A%20%20%20%20%3Fbeer%20%3Chttp%3A%2F%2Fnl.dbpedia.org%2Fproperty%2Fbrouwer%3E%20%3Fbrewery%20.%0A%20%20%20%20%3Fbrewery%20%3Chttp%3A%2F%2Fnl.dbpedia.org%2Fproperty%2Flocatie%3E%20%3Flocation%20%3B%0A%20%20%20%20%20%20rdfs%3Alabel%20%3FbreweryName%20.%0A%20%20%20%20%3Flocation%20rdfs%3Alabel%20%3FcityName%20.%0A%20%20%20%20%3Forigin%20%3Fprop%20%3FpropValue%20.%0A%20%20%20%20filter%20(regex(%3FpropValue%2C%20%22Brabant%22%2C%20%22i%22)%20)%0A%20%20%7D%0A%7D%20order%20by%20rand()%20LIMIT%201",
+                "PREFIX%20dbo%3A%20%3Chttp%3A%2F%2Fdbpedia.org%2Fontology%2F%3E%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%0A%0ASELECT%20distinct%20(%3FbeerName%20as%20%3Fanswer)%0AWHERE%20%7B%0A%20%20graph%20%3Chttp%3A%2F%2Flive.nl.dbpedia.org%3E%20%7B%0A%20%20%20%20%3Fbeer%20a%20dbo%3ABeer%20%3B%0A%20%20%20%20%20%20rdfs%3Alabel%20%3FbeerName%20%3B%20%20%20%20%20%0A%20%20%20%20%20%20dbo%3Aorigin%20%3Forigin%20.%0A%20%20%20%20%3Fbeer%20%3Chttp%3A%2F%2Fnl.dbpedia.org%2Fproperty%2Fbrouwer%3E%20%3Fbrewery%20.%0A%20%20%20%20%3Fbrewery%20%3Chttp%3A%2F%2Fnl.dbpedia.org%2Fproperty%2Flocatie%3E%20%3Flocation%20%3B%0A%20%20%20%20%20%20rdfs%3Alabel%20%3FbreweryName%20.%0A%20%20%20%20%3Flocation%20rdfs%3Alabel%20%3FcityName%20.%0A%20%20%20%20%3Forigin%20%3Fprop%20%3FpropValue%20.%0A%20%20%20%20filter%20(regex(%3FpropValue%2C%20%22Brabant%22%2C%20%22i%22)%20)%0A%20%20%20%20FILTER%20(%3Fbeer%20!%3D%20<answer_uri>)%0A%20%20%7D%0A%7D%20order%20by%20rand()%20LIMIT%203"
+            ],
+            "answer"   : "1"
+        }
+    ]
+}

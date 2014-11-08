@@ -14,10 +14,9 @@
      * Register the QuizBuilder class with RequireJS
      */
     define([
-            'utils/supplant',
-            'utils/logger/ExternalLogger'
+            'utils/supplant'
         ],
-        function ( supplant, $log )
+        function ( supplant )
         {
                 /**
                  * Labels table used to convert numbered lists to `lettered` lists
@@ -31,7 +30,7 @@
                  *
                  * @constructor
                  */
-                ScoreBuilder = function( )
+                ScoreBuilder = function($log)
                 {
                     $log = $log.getInstance( "ScoreBuilder" );
 

@@ -15,15 +15,19 @@
     "use strict";
 
     define([
+            'quiz/builders/SparqlQuizBuilder',
+            'quiz/builders/ScoreBuilder',
             'quiz/delegates/QuizDelegate',
             'quiz/controllers/TestController',
             'quiz/controllers/ScoreController'
         ],
-        function ( QuizDelegate, TestController, ScoreController )
+        function ( QuizBuilder, ScoreBuilder, QuizDelegate, TestController, ScoreController )
         {
             var moduleName = "quizzer.Quiz";
 
             angular.module( moduleName, [ ] )
+                .service( "quizBuilder",          QuizBuilder )
+                .service( "scoreBuilder",         ScoreBuilder )
                 .service( "quizDelegate",         QuizDelegate )
                 .controller( "TestController",    TestController )
                 .controller( "ScoreController",   ScoreController );
