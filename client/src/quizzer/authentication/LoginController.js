@@ -142,7 +142,7 @@
                     };
 
 
-                $scope.email     = "ThomasBurleson@gmail.com";
+                $scope.email     = "SemanticQuiz@gmail.com";
                 $scope.password  = "none";
                 $scope.sessionID = session.sessionID;
                 $scope.errorMessage = "";
